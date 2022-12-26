@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<style>
+
+body {
+  background-color: black;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+main{
+  width: 300px;
+  height: 600px;
+  position: relative;
+  cursor: pointer;
+  
+  /* 3d rotation */
+  transform-style: preserve-3d; 
+  /* rotation time */
+  transition: 3s;
+}
+/* rotation */
+main:hover{
+  transform: perspective(500px) rotateY(180deg);
+}
+
+#on {
+  position: absolute;
+  backface-visibility: hidden;
+  
+
+  display: grid;
+  place-items: center;
+    inset: 0;
+    width: 300px;
+    height: 600px;
+    border-radius: 5em;
+    place-content: center;
+    overflow: hidden;
+    background-color: white;}
+#on, #off{
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, #000000, .3),
+      inset 0 0 35px 90 rgba(0, 0, #000000, 0.8),
+      0 0 0 10px gray, 0 0 0 15px gray,
+      0 0 0 10px gray, 0 0 0 30px gray;
+    background: linear-gradient(to top,
+      rgb(100, 116, 139),
+      rgb(254, 249, 195))
+}
+#off {
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+
+  display: grid;
+  place-items: center;
+    inset: 0;
+    width: 300px;
+    height: 600px;
+    border-radius: 5em;
+    place-content: center;
+    overflow: hidden;
+    background-color: gray;
+}
+
+
+
+</style>
+    
+  <main>
+
+    <section id="on">
+      <h1>on</h1>
+    </section>
+    
+    <section id="off">
+      <h1>off</h1>
+    </section>
+
+  </main>
+
+</body>
+</html>
