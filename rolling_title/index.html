@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            height: 200vh;
+            overflow-x: hidden;
+        }
+        .background{
+            /* background-image: url("1.jpeg"); */
+            background: linear-gradient( gray, white);
+            background-size: cover;
+            background-position: 50% 50%;
+            height: 200vh;
+            font: 900 39rem '';
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+        .background::before{
+            content: '';
+            background-size: cover;
+            background-image: inherit;
+            background-position: 50% 50%;
+            position: absolute;
+            top:0;
+            left:0;
+            bottom: 0;
+            right: 0;
+            z-index: -99;
+        }
+        h1{
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            letter-spacing: 10px;
+            color: #fff;
+        }
+        h2{
+            position: absolute;
+            letter-spacing: 2px;
+            top: 120vh;
+            width: 60%;
+            color: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 30px;
+            background-color: rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Touhou</h1>
+    <div class="background"><span>东方</span></div>
+    <h2>游戏是官方作品的主要形式，也是东方project系列的核心。
+        ZUN通过游戏获得的成就和荣誉为数最多，ZUN也主要以游戏制作者的身份被众人所知。
+        大部分东方角色都通过游戏获得首次出场，官方游戏所讲述的事件数量也远高于其他形式的作品。
+        在官方作品中，游戏拥有主体地位。
+        自2002年C62上发布的《东方红魔乡》起，ZUN以社团“上海爱丽丝幻乐团”名义发布的游戏被称为“新作”。
+        “新作”这个称呼是为了与先前的五部“旧作”做出区别，同理，因为运行平台与“旧作”不同，也被称为“WIN作”。
+        新作游戏中，有一部分是与同人社团“黄昏边境”合作的横版格斗游戏（其中《东方刚欲异闻》为动作过关游戏），被称为“黄昏作”或“格斗作”。
+        弹幕射击游戏是官方游戏的主要类型。即使是在其他类型的官方游戏中，弹幕射击游戏中的“弹幕”“擦弹”“符卡”等元素依然有所体现。
+        由“上海爱丽丝幻乐团”制作，并且给予整数系列编号的游戏被称为整数作。
+        --摘自wiki
+        </h2>
+
+        <script>
+            const background = document.querySelector(".background")
+
+            document.addEventListener('scroll', ()=>{
+                const scrollY = window.scrollY
+                if (scrollY !== 0){
+                    background.style.backgroundPosition = `calc(50% + ${scrollY}px) calc(50% + ${scrollY}px)`
+                }else{
+                    background.style.backgroundPosition = ''
+                }
+            })
+        </script>
+</body>
+</html>
