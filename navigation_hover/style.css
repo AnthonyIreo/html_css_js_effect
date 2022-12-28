@@ -1,0 +1,74 @@
+body{
+    background-color: lightpink;
+    display: grid;
+    place-content: center;
+    color: white;
+    padding-top: 100px;
+}
+h2{
+    text-align: center;
+    color: gray;
+    font-size: 1.2em;
+    margin-top: 1em;
+    font-weight: lighter;
+}
+main{
+    padding: 0 50px;
+    background: white;
+    border-radius: 1em;
+    box-shadow: 0 20px 25px 0 rgba(#000, 0.8),
+        inset 0 -5px 10px rgba(#000000, 0.3);
+}
+nav{
+    display: grid;
+    height: 80px;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+}
+nav section{
+    display: flex;
+    width: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    /* smooth */
+    transition: all 0.2s linear;
+}
+nav section #icon{
+    font-size: 2.2em;
+    transition: 0.5s;
+    pointer-events: none;
+}
+nav section #icon img{
+    height: 20px;
+    width: 20px;
+}
+span{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: pink;
+    /* animation */
+    transform: translateY(30px);
+    opacity: 0;
+}
+section:hover{
+    transform: translateY(-30px);
+} 
+section:hover span{
+    opacity: 1;
+    color:orange;
+} 
+/* #ball{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: -20%;
+    background: lightsalmon;
+    border: solid 3px lightcoral;
+    transition: all 0.3s linear;
+    box-shadow: inset 0 0 6px 0 rgba(#000000, 1);
+} */
