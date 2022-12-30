@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+        body {
+            min-height: 100vh;
+            background: gray;
+            background-size: cover;
+            background-position: center;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+            padding: 0px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+        header .logo {
+            font-weight: bolder;
+            font-size: 25px;
+            color: #333;
+        }
+        header .navbar ul {
+            list-style: none;
+        }
+        header .navbar ul li {
+            position: relative;
+            float: left;
+        }
+        header .navbar ul li a {
+            font-size: 20px;
+            padding: 20px;
+            color: #333;
+            display: block;
+        }
+        header .navbar ul li a:hover {
+            background: #333;
+            color: #fff;
+        }
+        /* sub */
+        header .navbar ul li ul {
+            position: absolute;
+            left: 0;
+            width: 200px;
+            background: #fff;
+            display: none;
+        }
+        header .navbar ul li ul li {
+            width: 100%;
+            border-top: 1px solid rgba(0, 0, 0, .1);
+        }
+        header .navbar ul li ul li ul {
+            left: 200px;
+            top: 0;
+        }
+        /* won't disappear after clicked */
+        header .navbar ul li:focus-within > ul,
+        header .navbar ul li:hover > ul {
+            display: initial;
+        }
+
+        /* menu for small size window */
+        #menu-bar {
+            display: none;
+        }
+        header label {
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* fix display in different size window */
+        @media(max-width:991px){
+            header{
+                padding: 20px;
+            }
+            header label {
+                display: initial;
+            }
+
+            header .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;right: 0;
+                background: #fff;
+                border-top: 1px solid rgba(0, 0, 0, .1);
+                /* +++ */
+                display: none;
+            }
+            header .navbar ul li {
+                width: 100%
+            }
+            header .navbar ul li ul {
+                position: relative;
+                width: 100%;
+            }
+            header .navbar ul li ul li {
+                background: #eee;
+            }
+            header .navbar ul li ul li ul {
+                width: 100%;
+                left: 0;
+            }
+
+            #menu-bar:checked ~ .navbar {
+                display: initial;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">LOGO</a>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menu</label>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">pages +</a>
+                <ul>
+                    <li><a href="#">blogs</a></li>
+                    <li><a href="#">services +</a>
+                    <ul>
+                        <li><a href="#">html</a></li>
+                        <li><a href="#">css</a></li>
+                        <li><a href="#">js</a></li>
+                    </ul></li>
+                </ul></li>
+                <li><a href="#">review</a></li>
+                <li><a href="#">gallery +</a>
+                <ul>
+                    <li><a href="#">grid gallery</a></li>
+                    <li><a href="#">flex gallery</a></li>
+                </ul></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
