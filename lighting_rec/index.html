@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #121212;
+        }
+        .loader_cube{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 30px;
+        }
+        .loader_cube_glowing{
+            z-index: 2;
+            background-color: rgba(255,255,255,.2);
+            border: 2px solid rgba(255,255,255,.3);
+            backdrop-filter: blur(5px);
+            animation: load 1s ease-in-out infinite;
+        }
+        .loader_cube_color{
+            z-index: 1;
+            filter: blur(2px);
+            background: linear-gradient(135deg,#1afbf0,#da00ff);
+            animation: loadtwo 1s ease-in-out infinite;
+        }
+        @keyframes load {
+            50%
+            {
+                transform: rotate(80deg);
+            }
+            100%
+            {
+                transform: rotate(0deg);
+            }
+        }
+        @keyframes loadtwo {
+            50%
+            {
+                transform: rotate(-80deg);
+            }
+            100%
+            {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="loader_cube loader_cube_color"></div>
+        <div class="loader_cube loader_cube_glowing"></div>
+
+    </div>
+
+
+</body>
+</html>
